@@ -9,7 +9,7 @@ dependencies:
   - perl-net-ftp=2.79
   - perl-lwp-protocol-https=6.07
   - bwa=0.7.17
-  - sra-tools=2.10.9
+  - sra-tools=2.11.0
   - samtools=1.9
   - picard=2.25.1
   - gatk4=4.2.0.0
@@ -18,9 +18,10 @@ dependencies:
   - bbmap=38.90
   - pilon=1.23
   - nanoplot=1.27.0
-  - canu=1.8
-  - wtdbg=2.5
   - igv=2.4.9
   - igvtools=2.5.3
   - fastqc=0.11.9
   - seqlogo=5.29.8
+  - prinseq=0.20.4
+  - bcftools=1.9
+  - bowtie2=2.4.4

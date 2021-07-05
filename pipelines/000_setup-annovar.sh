@@ -13,6 +13,7 @@ echo
 echo "========== Executing $(basename $0) =========="
 cd $(dirname $0)
 
+cd ..
 source ./config
 
 [ -d "${annovar}" ] && abort "Annovar is already installed."
