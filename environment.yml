@@ -25,3 +25,5 @@ dependencies:
   - prinseq=0.20.4
   - bcftools=1.9
   - bowtie2=2.4.4
+  - cutadapt=1.18
+  - trim-galore=0.6.6

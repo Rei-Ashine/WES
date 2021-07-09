@@ -1,6 +1,10 @@
 config
 annovar.*.tar.gz
+
+# Tools and Outputs etc.
 tools/
+hangar/
+results_*/
 
 # Whole-exome sequencing data directory
 data/WES/*
