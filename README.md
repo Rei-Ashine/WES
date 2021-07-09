@@ -1,12 +1,14 @@
-# WES data analysis
+# WES Data Analysis
 
 Scripts for
-1. Identifying SNVs(: Somatic Nucleotide Variants)
+1. Identifying SNVs(: Somatic single-Nucleotide Variants)
 2. Identifying INDELs(: Somatic Insertions/Deletions)
 3. Identifying MS(: MicroSatellite) INDELs
-4. Clustering MSI-High and MSI-Low (MSI: Microsatellite Instability)
-5. Evaluating somatic mutation spectrum
+4. Clustering MSI-High and MSI-Low
+5. Evaluating Somatic Mutation Spectrum
 6. Identifying SCNAs(: Somatic Copy Number Alterations)
+
+\* MSI: Microsatellite Instability
 
 ## Installing Dependencies
 All dependencies can be installed with conda.<br>
