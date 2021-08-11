@@ -6,8 +6,8 @@ tools/
 hangar/
 results_*/
 
-# Whole-exome sequencing data directory
-data/WES/*
+# Raw data directory
+data/*
 
 # General for macOS
 .DS_Store
