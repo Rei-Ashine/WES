@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #$ -S /usr/bin/bash
 # Execution time for 010_check-quality.sh : 0:5:57 for sample001
+# Execution time for 010_check-quality.sh : 0:30:19
 
 set -euo pipefail
 

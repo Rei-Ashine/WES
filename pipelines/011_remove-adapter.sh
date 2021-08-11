@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #$ -S /usr/bin/bash
 # Execution time for 011_remove-adapter.sh : 0:27:28 for sample001
+# Execution time for 011_remove-adapter.sh : 1:24:43
 
 set -euo pipefail
 
