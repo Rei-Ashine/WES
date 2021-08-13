@@ -12,7 +12,7 @@ source ./config
 
 
 echo -----
-echo "Preparing Annovar ..."
+echo "Preparing ANNOVAR ..."
 for bver in "${versions[@]}"; do
     echo "--------------- ${bver} ---------------"
     [ -d "${annovar}/humandb/${bver}_seq" ] || ${annovar}/annotate_variation.pl -buildver ${bver} -downdb seq ${annovar}/humandb/${bver}_seq

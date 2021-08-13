@@ -16,13 +16,13 @@ cd $(dirname $0)
 cd ..
 source ./config
 
-[ -d "${annovar}" ] && abort "Annovar is already installed."
+[ -d "${annovar}" ] && abort "ANNOVAR is already installed."
 [ $# = 0 ] && abort "[Error] No arguments: Enter the annovar.*.tar.gz file path"
 [ -f $1 ] || abort "[Error] No such file: $(basename $1)"
 
 
 echo -----
-echo "Installing Annovar ..."
+echo "Installing ANNOVAR ..."
 tar zxvf $1
 wait
 

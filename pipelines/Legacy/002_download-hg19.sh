@@ -12,7 +12,7 @@ source ./config
 
 
 echo -----
-echo "Downloading Reference Sequences ..."
+echo "Downloading Reference Sequences from UCSC ..."
 for bver in "${versions[@]}"; do
     echo "--------------- ${bver} ---------------"
     mkdir -p ${refd}_${bver}
