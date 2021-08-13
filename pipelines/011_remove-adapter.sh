@@ -1,9 +1,36 @@
 #!/usr/bin/bash
 #$ -S /usr/bin/bash
-# Execution time for 011_remove-adapter.sh : 0:27:28 for sample001
-# Execution time for 011_remove-adapter.sh : 1:24:43
+# Execution time for 011_remove-adapter.sh : 0:24:2
 
 set -euo pipefail
+
+function abort
+{
+    echo "$@" 1>&2
+    exit 1
+}
+export -f abort
+
+function remove_adapter()
+{
+    id="$1"
+    threads="$2"
+    source ./config
+    # EX_5429_*_1_1.fastq.gz
+    F="${INPUT}/${id}_1_1.fastq.gz"
+    # EX_5429_*_1_2.fastq.gz
+    R="${INPUT}/${id}_1_2.fastq.gz"
+
+    [ -e ${F} ] || abort "[Error] No such file: $(basename ${F})"
+    [ -e ${R} ] || abort "[Error] No such file: $(basename ${R})"
+    wait
+
+    trim_galore -j ${threads} -o ${medium}/trimmed --paired ${F} ${R}
+    wait
+    echo -
+    echo
+}
+export -f remove_adapter
 
 echo
 echo "========== Executing $(basename $0) =========="
@@ -12,16 +39,16 @@ cd $(dirname $0)
 cd ..
 source ./config
 
-NUM_PROCESS="4"
-NUM_CPU="2"
+NUM_PROCESS="5"
+NUM_THREAD="5"
 
 
 START=$(date +%s)
 echo -----
 mkdir -p ${medium}/trimmed
 echo "Removing Illumina Universal Adapter ..."
-find ${INPUT} -name "*.fastq.gz" -type f -print0 | sort -z | xargs -0 -n 2 -P ${NUM_PROCESS} \
-    trim_galore -j ${NUM_CPU} -o ${medium}/trimmed --paired
+cat ${medium}/${sample_ids} | xargs -d "\n" -P ${NUM_PROCESS} -I {} \
+    bash -c "remove_adapter {} ${NUM_THREAD}"
 wait
 echo "done!"
 echo
